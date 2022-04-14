@@ -1,6 +1,6 @@
 name: sign_with_unicloud_id
-description: A new Flutter project.
-version: 0.0.1
+description: A Flutter project support sign with Unicloud Id of Unicloud Group.
+version: 0.0.3
 homepage: https://github.com/thuanpham98/sign_with_unicloud_id
 
 environment:

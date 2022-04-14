@@ -20,29 +20,23 @@ class SignWithUnicloudId {
     _authConfig = AuthConfig(redirectUrl: redirectUrl);
   }
 
-  Future<Map<String, dynamic>> authorize() async {
-    assert(_authConfig?.redirectUrl == null);
-    Completer<Map<String, dynamic>> c = Completer<Map<String, dynamic>>();
+  Future<Map<String, dynamic>?> authorize() async {
+    assert(_authConfig?.redirectUrl != null);
 
-    _appAuth
-        .authorizeAndExchangeCode(
+    Map<String, dynamic>? retData;
+    AuthorizationTokenResponse? ret = await _appAuth.authorizeAndExchangeCode(
       AuthorizationTokenRequest(
         _clientId,
         _authConfig?.redirectUrl ?? '',
         serviceConfiguration: AuthConfig.toAuthoServiceConfig(),
       ),
-    )
-        .then((value) {
-      if (value == null) {
-        c.complete({});
-      } else {
-        c.complete({
-          "accessToken": value.accessToken,
-          "refreshToken": value.refreshToken,
-        });
-      }
-    });
-
-    return c.future;
+    );
+    if (ret != null) {
+      retData = {
+        "refreshToken": ret.refreshToken,
+        "token": ret.accessToken,
+      };
+    }
+    return retData;
   }
 }
