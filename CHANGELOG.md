@@ -1,11 +1,15 @@
+## 0.0.4
+
+- Add config client id
+
 ## 0.0.3
 
-- fix Authorize and add example
+- Fix Authorize and add example
 
 ## 0.0.2
 
-- fix constructor
+- Fix constructor
 
 ## 0.0.1
 
-- init packages
+- Init packages

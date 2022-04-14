@@ -109,10 +109,4 @@ Note : The `last of applicationId` (ex: com.example.auth with the last is `auth`
 
 # Usage
 
-TODO: How to use this package.
-
-```dart
-SignWithUnicloudId signWithUnicloudId = SignWithUnicloudId.instance;
-signWithUnicloudId.setConfig(redirectUrl: "com.example.autho");
-var ret = await signWithUnicloudId.authorize();
-```
+Checkout `\example` for more details.

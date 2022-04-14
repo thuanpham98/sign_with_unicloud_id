@@ -16,7 +16,8 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     signWithUnicloudId = SignWithUnicloudId.instance;
-    signWithUnicloudId.setConfig(redirectUrl: 'vn.unicloudid.auth');
+    signWithUnicloudId.setConfig(
+        redirectUrl: 'vn.unicloudid.auth', clientId: "unicloud-ca");
     super.initState();
   }
 

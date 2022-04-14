@@ -8,7 +8,7 @@ import 'package:sign_with_unicloud_id/src/auth_config.dart';
 class SignWithUnicloudId {
   static AuthConfig? _authConfig;
   late final FlutterAppAuth _appAuth;
-  static const _clientId = "unicloud-ca";
+  static late String? _clientId;
 
   SignWithUnicloudId._() {
     _appAuth = FlutterAppAuth();
@@ -16,17 +16,18 @@ class SignWithUnicloudId {
 
   static SignWithUnicloudId get instance => SignWithUnicloudId._();
 
-  void setConfig({required String redirectUrl}) {
+  void setConfig({required String redirectUrl, required String clientId}) {
     _authConfig = AuthConfig(redirectUrl: redirectUrl);
+    _clientId = clientId;
   }
 
   Future<Map<String, dynamic>?> authorize() async {
-    assert(_authConfig?.redirectUrl != null);
+    assert(_authConfig?.redirectUrl != null && _clientId != null);
 
     Map<String, dynamic>? retData;
     AuthorizationTokenResponse? ret = await _appAuth.authorizeAndExchangeCode(
       AuthorizationTokenRequest(
-        _clientId,
+        _clientId!,
         _authConfig?.redirectUrl ?? '',
         serviceConfiguration: AuthConfig.toAuthoServiceConfig(),
       ),
