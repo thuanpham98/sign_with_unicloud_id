@@ -93,7 +93,7 @@ Note : The `last of applicationId` (ex: com.example.auth with the last is `auth`
 
 ### in `ios\Runner\Info.plist` add this into `dict` tag :
 
-```plist
+```XMl
 <key>CFBundleURLTypes</key>
 <array>
     <dict>
