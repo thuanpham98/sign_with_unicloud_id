@@ -8,15 +8,13 @@ import 'package:sign_with_unicloud_id/src/auth_config.dart';
 class SignWithUnicloudId {
   static AuthConfig? _authConfig;
   late final FlutterAppAuth _appAuth;
-  static late final SignWithUnicloudId? _signWithUnicloudId;
   static const _clientId = "unicloud-ca";
 
-  SignWithUnicloudId() {
+  SignWithUnicloudId._() {
     _appAuth = FlutterAppAuth();
-    _signWithUnicloudId ??= SignWithUnicloudId();
   }
 
-  static SignWithUnicloudId get instance => _signWithUnicloudId!;
+  static SignWithUnicloudId get instance => SignWithUnicloudId._();
 
   void setConfig({required String redirectUrl}) {
     _authConfig = AuthConfig(redirectUrl: redirectUrl);
