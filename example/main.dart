@@ -1,5 +1,3 @@
-import 'dart:io' show Platform;
-
 import 'package:flutter/material.dart';
 import 'package:sign_with_unicloud_id/sign_with_unicloud_id.dart';
 
@@ -37,23 +35,13 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-            child: Container(
-          child: Platform.isIOS
-              ? Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    child: const Text(
-                      'Sign in with Unicloud ID(iOS only)',
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: _signInWithAutoCodeExchange,
-                  ),
-                )
-              : ElevatedButton(
-                  child: const Text('Sign in with Unicloud ID'),
-                  onPressed: () => _signInWithAutoCodeExchange(),
-                ),
-        )),
+          child: Container(
+            child: ElevatedButton(
+              child: const Text('Sign in with Unicloud ID'),
+              onPressed: () => _signInWithAutoCodeExchange(),
+            ),
+          ),
+        ),
       ),
     );
   }
