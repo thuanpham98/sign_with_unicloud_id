@@ -56,37 +56,37 @@ Note : The `last of applicationId` (ex: com.example.auth with the last is `auth`
 
 ```XML
 
-            <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme='<your_custom_scheme>'/>
-            </intent-filter>
+<meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
+<intent-filter>
+    <action android:name="android.intent.action.VIEW"/>
+    <category android:name="android.intent.category.DEFAULT"/>
+    <category android:name="android.intent.category.BROWSABLE"/>
+    <data android:scheme='<your_custom_scheme>'/>
+</intent-filter>
 
-            <!-- App Links -->
-            <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with https://YOUR_HOST -->
-                <data
-                android:scheme="https"
-                android:host='<your_server_open_id_url>' />
-            </intent-filter>
+<!-- App Links -->
+<meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
+<intent-filter android:autoVerify="true">
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <!-- Accepts URIs that begin with https://YOUR_HOST -->
+    <data
+    android:scheme="https"
+    android:host='<your_server_open_id_url>' />
+</intent-filter>
 
-            <!-- App Links if your server support http and https -->
-            <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with https://YOUR_HOST -->
-                <data
-                android:scheme="http"
-                android:host='<your_server_open_id_url>' />
-            </intent-filter>
+<!-- App Links if your server support http and https -->
+<meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
+<intent-filter android:autoVerify="true">
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <!-- Accepts URIs that begin with https://YOUR_HOST -->
+    <data
+    android:scheme="http"
+    android:host='<your_server_open_id_url>' />
+</intent-filter>
 ```
 
 # IOS
@@ -94,23 +94,22 @@ Note : The `last of applicationId` (ex: com.example.auth with the last is `auth`
 ### in `ios\Runner\Info.plist` add this into `dict` tag :
 
 ```plist
-   <key>CFBundleURLTypes</key>
-   <array>
-      <dict>
-         <key>CFBundleTypeRole</key>
-         <string>Editor</string>
-         <key>CFBundleURLSchemes</key>
-         <array>
-            <string>your_custom_scheme</string>
-         </array>
-      </dict>
-   </array>
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+        <string>your_custom_scheme</string>
+        </array>
+    </dict>
+</array>
 ```
 
 # Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+TODO: How to use this package.
 
 ```dart
 SignWithUnicloudId signWithUnicloudId = SignWithUnicloudId.instance;
